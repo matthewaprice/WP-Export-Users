@@ -68,16 +68,7 @@ class WP_Export_Users {
 					<tr>
 						<th scope="row"><?php $this->Label( 'user_role', 'User Role' ); ?></th>
 						<td><?php $this->InputField( 'select', 'user_role', get_option('wp_user_roles') ); ?></td>
-					</tr>	
-<!--
-					<tr>
-						<th scope="row"><?php $this->Label( 'encapsulator', 'Field Encapsulator' ); ?></th>
-						<td><?php $this->InputField( 'select', 'encapsulator' ); ?></td>
-					</tr>																																									<tr>
-						<th scope="row"><?php $this->Label( 'separator', 'Field Separator' ); ?></th>
-						<td><?php $this->InputField( 'select', 'separator' ); ?></td>
-					</tr>	
--->					
+					</tr>					
 					<tr>
 						<th scope="row"><?php $this->Label( 'headers', 'Do you want field headers?' ); ?></th>
 						<td><?php $this->InputField( 'checkbox', 'headers' ); ?></td>
@@ -128,20 +119,6 @@ class WP_Export_Users {
 						?>
 						</select>					
 						<?php
-						break;	
-					case 'encapsulator' :
-					case 'separator' 	:
-						?>
-							<select name="<?php echo $name; ?>">
-								<option value="comma">Comma (,)</option>
-								<option value="semicolon">Semi-Colon (;)</option>
-								<option value="pipe">Pipe (|)</option>
-								<option value="newline">Line Break</option>
-								<option value="squote">Single Quote (')</option>
-								<option value="dquote">Double Quote (")</option>
-								<option value="none">None</option>
-							</select>
-						<?php						
 						break;							
 				endswitch;
 				break;
@@ -195,10 +172,6 @@ class WP_Export_Users_Download {
 			unset( $post_vars['_wpnonce'] );
 			unset( $post_vars['_wp_http_referer'] );
 			unset( $post_vars['submit'] );						
-/*
-			unset( $post_vars['encapsulator'] );						
-			unset( $post_vars['separator'] );						
-*/
 			unset( $post_vars['headers'] );
 			unset( $post_vars['wp_location'] );
 			$keys = array_keys( $post_vars );
@@ -236,8 +209,6 @@ class WP_Export_Users_Download {
 			'user_url',
 			'display_name',
 			'user_role',
-			'encapsulator',
-			'separator',
 			'headers'
 		);	
 		return $fields;
