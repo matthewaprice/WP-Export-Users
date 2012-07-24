@@ -2,7 +2,7 @@
 /*
 Plugin Name: WP Export Users 2
 Plugin URI: http://matthewaprice.com/wp-export-user/
-Description: Allows for custom csv user data output.  It allows you to customize the Field Separators and Encapsulators.  It gives you a preview of your data that you can copy and paste into a text file or into any application.
+Description: Allows for custom csv user data output. 
 Version: 2.0
 Author: Matthew Price
 Author URI: http://matthewaprice.com
@@ -34,6 +34,7 @@ class WP_Export_Users {
 			<div id="message" class="updated fade" style="display: none;" >
 				<p>Your file is downloading.  Download times will vary based on the size of your user base.</p>			
 			</div>			
+			<p>You can use this form below to pick which fields you would like to export.  When you click "Output Data", a file will be downloaded with your selected options</p>
 			<table class="form-table">
 				<tbody>
 					<tr>
@@ -258,3 +259,4 @@ class WP_Export_Users_Download {
 	}		
 
 }
+?>
