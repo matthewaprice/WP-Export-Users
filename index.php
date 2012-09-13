@@ -38,6 +38,10 @@ class WP_Export_Users {
 			<table class="form-table">
 				<tbody>
 					<tr>
+						<th scope="row"><?php $this->Label( 'ID', 'User ID' ); ?></th>
+						<td><?php $this->InputField( 'checkbox', 'ID' ); ?></td>
+					</tr>
+					<tr>
 						<th scope="row"><?php $this->Label( 'user_login', 'User Login' ); ?></th>
 						<td><?php $this->InputField( 'checkbox', 'user_login' ); ?></td>
 					</tr>
@@ -142,6 +146,7 @@ class WP_Export_Users_Download {
 			foreach ( $fields as $field ) :
 				if ( array_key_exists( $field, $options ) ) :
 					switch ( $field ) :
+						case 'ID' 	:
 						case 'user_login' 	:
 						case 'first_name' 	:
 						case 'last_name' 	:
@@ -201,6 +206,7 @@ class WP_Export_Users_Download {
 	private function userExportFields() {
 		
 		$fields = array(
+			'ID',
 			'user_login',
 			'first_name',
 			'last_name',
